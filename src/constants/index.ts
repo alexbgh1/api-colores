@@ -1,0 +1,5 @@
+const SIZE_LIMIT = 1000;
+const DEFAULT_COLOR = "#eaeaea";
+const DEFAULT_TEXT_COLOR = "#888";
+
+export { SIZE_LIMIT, DEFAULT_COLOR, DEFAULT_TEXT_COLOR };
