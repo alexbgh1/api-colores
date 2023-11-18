@@ -25,7 +25,10 @@ jobs:
 
       - name: Build TypeScript
         run: npm run build
-
+        
+      - name: Start Server
+        run: npm start
+        
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@4.1.1
         with:
