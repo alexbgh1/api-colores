@@ -4,7 +4,9 @@ on:
   push:
     branches:
       - main
-
+permissions:
+  contents: write
+  
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -29,4 +31,4 @@ jobs:
         with:
           branch: gh-pages
           folder: build
-          ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
