@@ -10,10 +10,12 @@ const app = express();
 app.use(express.json()); // Permite que la aplicación entienda JSON
 
 const PORT = process.env.PORT || 4000;
+
+app.use(express.static(path.join(__dirname, "web")));
 app.use("/api", colorRoutes);
 
 app.get("/", (_req, res) => {
-  const pathHTML = path.join(__dirname + "/web", "index.html");
+  const pathHTML = path.join(__dirname, "web", "index.html");
   res.sendFile(pathHTML);
 });
 

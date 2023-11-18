@@ -5,14 +5,16 @@
   "main": "index.js",
   "scripts": {
     "dev": "ts-node-dev src/index.ts",
-    "tsc": "tsc",
-    "start": "node build/index.js"
+    "start": "node build/index.js",
+    "build": "tsc && npm run copy-static",
+    "copy-static": "ncp ./src/web ./build/web"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@types/express": "^4.17.19",
+    "ncp": "^2.0.0",
     "ts-node-dev": "^2.0.0",
     "typescript": "^5.2.2"
   },
