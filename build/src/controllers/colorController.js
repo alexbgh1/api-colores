@@ -15,7 +15,6 @@ const helpers_1 = require("../helpers");
 const getColor = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     // /api/:size
     const { size, hexColor } = req.params;
-    console.log(req.params);
     // /api/size?text="hola mundo"
     const text = req.query.text || `${size}x${size}`;
     // /api/size?json=true

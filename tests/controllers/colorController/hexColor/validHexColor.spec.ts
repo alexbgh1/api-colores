@@ -1,12 +1,13 @@
 import { test, expect } from "@playwright/test";
 import { API_URL } from "../../../constants";
-import { VALID_SIZES } from "./constants";
+import { VALID_HEX_COLORS } from "./constants";
 
 // All valid sizes should return a 200 status code, a Content-Type of image/jpeg, a Content-Length > 0 and a Buffer body
-VALID_SIZES.forEach((intValue) => {
-  test(`VALID INPUT | GET api/${intValue}`, async ({ request }) => {
+VALID_HEX_COLORS.forEach((stringValue) => {
+  const size = 100;
+  test(`VALID INPUT | GET api/${size}/${stringValue}`, async ({ request }) => {
     // 1. GET Request API_URL
-    const response = await request.get(`${API_URL}/api/${intValue}`);
+    const response = await request.get(`${API_URL}/api/${size}/${stringValue}`);
 
     // 2. [Status] Assert that the status code is 200
     expect(response.status()).toBe(200);

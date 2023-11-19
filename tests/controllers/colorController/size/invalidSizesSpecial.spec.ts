@@ -1,5 +1,6 @@
 import { test, expect } from "@playwright/test";
-import { API_URL, INVALID_SIZES_SPECIAL } from "../../../constants";
+import { API_URL } from "../../../constants";
+import { INVALID_SIZES_SPECIAL } from "./constants";
 
 // All invalid sizes (special characters like '%') should return a 400 status code, a Content-Type of application/json and a JSON body
 INVALID_SIZES_SPECIAL.forEach((stringValue) => {

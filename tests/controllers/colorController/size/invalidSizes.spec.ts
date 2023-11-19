@@ -1,5 +1,6 @@
 import { test, expect } from "@playwright/test";
-import { API_URL, INVALID_SIZES } from "../../../constants";
+import { API_URL } from "../../../constants";
+import { INVALID_SIZES } from "./constants";
 
 INVALID_SIZES.forEach((stringValue) => {
   test(`INVALID INPUT | GET api/${stringValue}`, async ({ request }) => {
