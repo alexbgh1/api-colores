@@ -6,6 +6,7 @@ import { hexToRgb, contrastLetters, createCustomCanvas } from "../helpers";
 const getColor = async (req: Request, res: Response) => {
   // /api/:size
   const { size, hexColor } = req.params;
+  console.log(req.params);
   // /api/size?text="hola mundo"
   const text = (req.query.text as string) || `${size}x${size}`;
   // /api/size?json=true

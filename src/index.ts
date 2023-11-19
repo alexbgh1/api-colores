@@ -1,19 +1,24 @@
 import express from "express";
 import dotenv from "dotenv";
 import colorRoutes from "./routes/colorRoutes";
+import badPathHandler from "./exception/batPathHandler";
 import path from "path";
 
 dotenv.config(); // Lee las variables de entorno del archivo .env
 
 const app = express();
 
+// Middlewares
 app.use(express.json()); // Permite que la aplicación entienda JSON
+app.use(express.static(path.join(__dirname, "web"))); // Permite servir archivos estáticos
 
 const PORT = process.env.PORT || 4000;
 
-app.use(express.static(path.join(__dirname, "web")));
-app.use("/api", colorRoutes);
+// Handler de rutas inválidas
+app.use(badPathHandler); //
 
+// Routes
+app.use("/api", colorRoutes);
 app.get("/", (_req, res) => {
   const pathHTML = path.join(__dirname, "web", "index.html");
   res.sendFile(pathHTML);
