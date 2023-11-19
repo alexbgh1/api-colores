@@ -27,7 +27,7 @@ INVALID_SIZES_OUT_OF_RANGE.forEach((intValue) => {
   test(`INVALID INPUT | GET api/${intValue}`, async ({ request }) => {
     // 1. GET Request API_URL
     const response = await request.get(`${API_URL}/api/${intValue}`);
-    // console.log(response);
+
     // 2. [Status] Assert that the status code is 400
     expect(response.status()).toBe(400);
 
@@ -47,7 +47,7 @@ INVALID_SIZES.forEach((stringValue) => {
   test(`INVALID INPUT | GET api/${stringValue}`, async ({ request }) => {
     // 1. GET Request API_URL
     const response = await request.get(`${API_URL}/api/${stringValue}`);
-    // console.log(response);
+
     // 2. [Status] Assert that the status code is 400
     expect(response.status()).toBe(400);
 
@@ -65,9 +65,8 @@ INVALID_SIZES.forEach((stringValue) => {
 // All invalid sizes (special characters like '%') should return a 400 status code, a Content-Type of application/json and a JSON body
 INVALID_SIZES_SPECIAL.forEach((stringValue) => {
   test(`INVALID INPUT | GET api/${stringValue}`, async ({ request }) => {
-    // 1. GET Request API_URL
     const response = await request.get(`${API_URL}/api/${stringValue}`);
-    // console.log(response);
+
     // 2. [Status] Assert that the status code is 400
     expect(response.status()).toBe(400);
 

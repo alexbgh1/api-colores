@@ -3,7 +3,6 @@ function badPathHandler(req: Request, res: Response, next: NextFunction) {
   let err = null;
   try {
     decodeURIComponent(req.path);
-    console.log(req.path);
   } catch (e) {
     err = e;
   }

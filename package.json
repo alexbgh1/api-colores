@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "ts-node-dev src/index.ts",
+    "test": "npx playwright test",
     "start": "node build/index.js",
     "build": "tsc && npm run copy-static",
     "copy-static": "ncp ./src/web ./build/web"
