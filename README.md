@@ -47,4 +47,4 @@ npm run test
 ## TODO:
 
 - [ ] Añadir más colorSpaces del color.
-- [ ] Añadir test cases.
+- [x] Añadir test cases.
