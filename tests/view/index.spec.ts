@@ -1,5 +1,5 @@
 import { test, expect } from "@playwright/test";
-import { API_URL } from "./constants";
+import { API_URL } from "../constants";
 
 test("Load index.html", async ({ page }) => {
   // 1. Go to API_URL
