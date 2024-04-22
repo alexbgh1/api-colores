@@ -1,7 +1,7 @@
 import express from "express";
 import dotenv from "dotenv";
 import colorRoutes from "./routes/colorRoutes";
-import badPathHandler from "./exception/batPathHandler";
+import badPathHandler from "./exception/badPathHandler";
 import path from "path";
 
 dotenv.config(); // Lee las variables de entorno del archivo .env
