@@ -10,7 +10,7 @@ on:
     branches: [ "main" ]
 
 jobs:
-  install-deps:
+  test:
 
     runs-on: ubuntu-latest
 
@@ -21,6 +21,7 @@ jobs:
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
+    # Installing deps
     - name: Installing Repository
       uses: actions/checkout@v3
       
@@ -37,19 +38,11 @@ jobs:
     - name: Install Playwright
       run: npx playwright install --with-deps
   
-  build:
-    needs: install-deps
-    runs-on: ubuntu-latest
-    
-    steps:
+  # Build:
     - name: Building 'Api Colors'
       run: npm run build --if-present
       
-  running-test:
-    needs: [install-deps, build]
-    runs-on: ubuntu-latest
-    
-    steps:
+  # Running-test:
     - name: Start server
       run: npm run start &
     - name: Wait for server to start
