@@ -6,9 +6,9 @@
   "scripts": {
     "dev": "ts-node-dev src/index.ts",
     "test": "npx playwright test",
-    "start": "node build/index.js",
+    "start": "node build/src/index.js",
     "build": "tsc && npm run copy-static",
-    "copy-static": "ncp ./src/web ./build/web"
+    "copy-static": "ncp ./src/web ./build/src/web"
   },
   "keywords": [],
   "author": "",
