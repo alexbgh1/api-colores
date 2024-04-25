@@ -7,6 +7,7 @@ import path from "path";
 dotenv.config(); // Lee las variables de entorno del archivo .env
 
 const app = express();
+app.disable('x-powered-by');
 
 // Middlewares
 app.use(express.json()); // Permite que la aplicación entienda JSON
