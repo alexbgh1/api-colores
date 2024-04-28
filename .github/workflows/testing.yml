@@ -51,13 +51,14 @@ jobs:
     # Installing deps
     - name: Installing Repository
       uses: actions/checkout@v3
-      
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-        
+    - name: Installing dependencies
+      run: npm ci
+      
     # Install Test deps
     - name: Install Playwright
       run: npx playwright install --with-deps
